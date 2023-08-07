@@ -1,0 +1,20 @@
+﻿@model AnimalStoreMvc.Models.Domain.Animal
+@*@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer*@
+@{
+}
+<div class="movie-detail w-80 m-auto">
+    <div class="img-container">
+        <img alt="image" src="/Uploads/@Model.AnimalImage">
+    </div>
+
+    <div class="detail-container">
+        <h3>@Model.Title</h3>
+        <h4>@Model.AnimaltypeName</h4>
+        <h4>@Model.ReleaseYear</h4>
+        <h4>Cast : @Model.Cast</h4>
+        <h4>Director : @Model.Finder</h4>
+    </div>
+</div>
+<div class="w-80 m-auto">
+    <a href="/Home/Index" class="btn btn-default">Back</a>
+</div>

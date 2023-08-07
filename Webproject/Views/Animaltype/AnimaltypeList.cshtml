@@ -1,0 +1,29 @@
+﻿@model IEnumerable<AnimalStoreMvc.Models.Domain.Animaltype>
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@{
+}
+
+<div class="tbl-container">
+    <h2>@localizer["Animaltype"]</h2>
+
+    <table>
+        <tr>
+            <th>@localizer["Name"]</th>
+            <th>@localizer["Action"]</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AnimaltypeName</td>
+                <td>
+                    <a href="/Animaltype/Edit?id=@item.Id" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                    <a onclick="return window.confirm('Are you sure?')" href="/Animaltype/Delete?id=@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div class="input-container">
+        <a href="/Animaltype/Add" class="btn btn-sec">@localizer["Back"]</a>
+    </div>
+</div>

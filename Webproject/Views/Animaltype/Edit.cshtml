@@ -1,0 +1,28 @@
+﻿@model AnimalStoreMvc.Models.Domain.Animaltype
+@{
+}
+
+<form class="w-40" asp-action="Update" method="post">
+    <h2 class="pb-10">Update Animaltype</h2>
+    <input type="hidden" class="input" asp-for="Id">
+
+    <div class="input-container">
+        <label asp-for="AnimaltypeName" class="w-40">AnimaltypeName</label>
+        <input type="text" class="input" asp-for="AnimaltypeName">
+    </div>
+    <div class="message-box pd-x-28 error">
+        <span asp-validation-for="AnimaltypeName"> </span>
+    </div>
+
+    @if (TempData["msg"] != null)
+    {
+        <div class="alert mb-1">
+            @TempData["msg"]
+        </div>
+    }
+
+    <div class="input-container">
+        <button class="btn btn-default" type="submit">Save</button>
+        <a class="btn btn-sec" href="/Animaltype/AnimaltypeList">All records</a>
+    </div>
+</form>
